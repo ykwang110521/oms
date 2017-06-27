@@ -5,7 +5,11 @@ use think\Controller;
 
 class Index extends  Controller {
 
+    /**
+     * @dashboard
+     */
     public  function index() {
-        echo 'admin index';die;
+        $template = 'dashboard/index';
+        return $this->fetch($template);
     }
 }
