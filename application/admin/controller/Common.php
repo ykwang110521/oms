@@ -4,16 +4,15 @@ namespace app\admin\controller;
 use think\Controller;
 use think\Request;
 
-class Test extends  Controller {
+class Common extends  Controller {
+
 
     public function __construct(Request $request)
     {
         parent::__construct($request);
     }
 
-    public  function test() {
-        //echo 'admin test';
-        $template = '/dashboard/index';
-        $this->fetch($template);
+    protected function resultJson($code=1,$data=array(),$msg='') {
+        $this->result($data,$code,$msg,'json');
     }
 }

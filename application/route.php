@@ -9,25 +9,25 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-$sub_domain = strstr(request()->host(),'.',true);
-
-switch($sub_domain){
-    case 'local':
-        $moudle = 'index';
-        Route::domain($sub_domain,$moudle);
-        require_once($moudle.'/route.php');
-        break;
-
-    case 'admin':
-        $moudle = 'admin';
-        Route::domain($sub_domain,$moudle);
-        include($moudle.'/route.php');
-        break;
-    default;
-        break;
-}
-if($moudle){
-    //定义MODULE_PATH
-    define('MODULE_PATH',APP_PATH.$moudle.'/');
-}
+//$sub_domain = strstr(request()->host(),'.',true);
+//
+//switch($sub_domain){
+//    case 'local':
+//        $moudle = 'index';
+//        Route::domain($sub_domain,$moudle);
+//        require_once($moudle.'/route.php');
+//        break;
+//
+//    case 'admin':
+//        $moudle = 'admin';
+//        Route::domain($sub_domain,$moudle);
+//        include($moudle.'/route.php');
+//        break;
+//    default;
+//        break;
+//}
+//if($moudle){
+//    //定义MODULE_PATH
+//    define('MODULE_PATH',APP_PATH.$moudle.'/');
+//}
 

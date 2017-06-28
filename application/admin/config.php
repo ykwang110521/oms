@@ -25,7 +25,8 @@ return array(
     'app_debug'              => false,
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__PUBLIC__' => __ROOT__.'/static/admin',
+        '__PUBLIC__'        => __ROOT__.'/static/admin',
+        '__SITE_TITLE__'    => 'OMS 管理系统',
     ],
 
 );
