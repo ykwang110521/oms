@@ -2,6 +2,10 @@
 $root = request()->root();
 define('__ROOT__',str_replace('/index.php','',$root));
 return array(
+    'token' => [
+        'access_token_lifetime' => 43200,
+        'refresh_token_lifetime'=> 86400,
+    ],
     // +----------------------------------------------------------------------
     // | Cookie设置
     // +----------------------------------------------------------------------

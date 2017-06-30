@@ -34,8 +34,12 @@ class User extends  Common {
             $this->resultJson(41003,[],'密码不正确');
         }
 
-        Session::set('adm_userinfo',['username'=>$data['username'],'id'=>$a_info['id'],'login_time'=>time()]);
-        //return $this->resultJson(10000,['url'=>url('/admin/dashboard/index')],'登录成功');
+        $auth2 = model('MoudleOAuth2');
+        $token = $auth2->login($a_info['id']);
+        if ($token) {
+            var_dump($token);die;
+        }
+
         exit(json_encode(array('status' => 1, 'msg' => '登录成功', 'url' => url('admin/dashboard/index'))));
     }
 
