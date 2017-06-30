@@ -4,7 +4,7 @@
 
     function copyright() {
         var year = (new Date).getFullYear();
-        $('.copy-text').append('<p>漏 ' + year + ' drive.ai</p>');
+        $('.copy-text').append('<p>© ' + year + ' drive.ai</p>');
     }
 
     function initNavbar () {
