@@ -37,10 +37,11 @@ class User extends  Common {
         $auth2 = model('MoudleOAuth2');
         $token = $auth2->login($a_info['id']);
         if ($token) {
-            var_dump($token);die;
+            //$this->redirect('/admin/dashboard');
+            exit(json_encode(array('status' => 1, 'msg' => '登录成功', 'url' => url('dashboard/index'))));
         }
 
-        exit(json_encode(array('status' => 1, 'msg' => '登录成功', 'url' => url('admin/dashboard/index'))));
+        //exit(json_encode(array('status' => 1, 'msg' => '登录成功', 'url' => url('admin/dashboard/index'))));
     }
 
     //密码的加密法，**注意此处必须是私密方法**
