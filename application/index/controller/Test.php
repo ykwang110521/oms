@@ -2,10 +2,12 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Db;
 
 class Test extends Controller {
 
     public  function  test() {
-        echo '前台 test';die;
+        $re = Db::name('page')->select();
+        var_dump($re);die;
     }
 }
